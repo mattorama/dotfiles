@@ -1,0 +1,5 @@
+.gitconfig
+.profile
+.psqlrc
+.tmux.conf
+.vimrc

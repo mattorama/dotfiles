@@ -32,4 +32,7 @@
 -- custom prompt to show host and database
 \set PROMPT1 '%M:%> %n@%/%R%#%x '
 
+-- default search path
+set search_path to periscope_views;
+
 \unset QUIET

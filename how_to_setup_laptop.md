@@ -3,15 +3,17 @@
 * VirtualBox, for my old computer, to enable docker: https://www.virtualbox.org/wiki/Downloads
 * Docker: https://hub.docker.com/editions/community/docker-ce-desktop-mac
   * Add Kitematic download
-* TeX distribution: https://www.tug.org/mactex/mactex-download.html
 * Java: https://www.java.com/en/download/mac_download.jsp
 	* edit `~/.profile`: `export JAVA_HOME="/usr/libexec/java_home -v 1.8"`
 * Anaconda, for Python environments: https://www.anaconda.com/download/#macos
 * Rstudio, for R environments: https://www.rstudio.com/products/rstudio/download/#download
-	* R: https://cran.rstudio.com
-		* R developer tools: https://cran.rstudio.com/bin/macosx/tools/
-			* edit `~/.profile`: `export PATH=/usr/local/clang6/bin:$PATH`
+  * R: https://cran.rstudio.com
+    * R developer tools: https://cran.rstudio.com/bin/macosx/tools/
+      * edit `~/.profile`: `export PATH=/usr/local/clang6/bin:$PATH`
+  * TeX distribution: https://www.tug.org/mactex/mactex-download.html
+
 * DBeaver is a nice, free, database UI: https://dbeaver.io
+  *  needs Java Platform JDK
 
 
 ### Basic requirements for Anaconda Python

@@ -1,5 +1,7 @@
+.condarc
 .gitconfig
-.profile
 .psqlrc
+.sqliterc
 .tmux.conf
 .vimrc
+.zshrc

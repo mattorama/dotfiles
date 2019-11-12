@@ -1,0 +1,4 @@
+.mode csv
+.mode column
+.headers ON
+

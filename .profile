@@ -18,6 +18,28 @@ export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 # added for libpq
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
+# added for jekyll
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# added for Make
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
+# this stops conda being launched by default but makes the conda commands work
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/matt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+if [ -f "/Users/matt/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "/Users/matt/miniconda3/etc/profile.d/conda.sh"
+else
+    export PATH="/Users/matt/miniconda3/bin:$PATH"
+fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
 
 # ALIASES
 
@@ -30,7 +52,13 @@ alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 ## command line sublime text
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-## git 
+## command line vscode
+alias code="${HOME}/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+## command line pycharm
+alias char="/usr/local/bin/charm"
+
+## git
 alias gprum='git pull --rebase upstream master'
 alias gpom='git push origin master'
 alias gpru='git pull --rebase upstream $BRANCH'
@@ -45,13 +73,6 @@ alias db1='psql -h hostname -d db'
 ## project shortcuts
 alias dev='cd "${DEV}"'
 alias rep='cd "${REPHOME}"; subl .'
-
-# added for anaconda
-ln -s ${HOME}/anaconda3/bin/conda /usr/local/bin/conda
-ln -s ${HOME}/anaconda3/bin/jupyter /usr/local/bin/jupyter
-ln -s ${HOME}/anaconda3/bin/jupyter-lab /usr/local/bin/jupyter-lab
-ln -s ${HOME}/anaconda3/bin/activate /usr/local/bin/activate
-ln -s ${HOME}/anaconda3/bin/deactivate /usr/local/bin/deactivate
 
 
 # FUNCTIONS

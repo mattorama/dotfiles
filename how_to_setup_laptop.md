@@ -2,6 +2,7 @@
 
 * VirtualBox, for my old computer, to enable docker: https://www.virtualbox.org/wiki/Downloads
 * Docker: https://hub.docker.com/editions/community/docker-ce-desktop-mac
+  * Add Kitematic download
 * TeX distribution: https://www.tug.org/mactex/mactex-download.html
 * Java: https://www.java.com/en/download/mac_download.jsp
 	* edit `~/.profile`: `export JAVA_HOME="/usr/libexec/java_home -v 1.8"`
@@ -18,11 +19,11 @@
 * add virtual environment commands to `~/.profile`: 
 	
 ```
-ln -s ${HOME}/anaconda3/bin/conda /usr/local/bin/conda
-ln -s ${HOME}/anaconda3/bin/jupyter /usr/local/bin/jupyter
-ln -s ${HOME}/anaconda3/bin/jupyter-lab /usr/local/bin/jupyter-lab
-ln -s ${HOME}/anaconda3/bin/activate /usr/local/bin/activate
-ln -s ${HOME}/anaconda3/bin/deactivate /usr/local/bin/deactivate
+if [ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "${HOME}/miniconda3/etc/profile.d/conda.sh"
+else
+    export PATH="${HOME}/miniconda3/bin:$PATH"
+fi
 ```
 
 
@@ -44,6 +45,10 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+#### homebrew stuff
+
+
+consider installing cmake, git, libpq, python3
 
 ### git
 

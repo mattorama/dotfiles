@@ -12,6 +12,7 @@ export LSCOLORS=gxFxCxDxBxegedabagacad
 
 # PATHS
 
+export PATH="/usr/local/clang6/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"

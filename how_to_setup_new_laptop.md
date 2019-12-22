@@ -55,10 +55,11 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 ### git
 
-* setup `.gitconfig` with appropriate username and email
-* run from `~`
+* setup `~/.gitconfig` with appropriate username and email
+* set up git command completion
 
 ```
+cd
 mkdir .zsh
 cd .zsh
 curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
@@ -72,11 +73,30 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 ```
 
-* run from `~`
+* then
 
 ```
 rm ~/.zcompdump
-source ~/
+source ~/.zshrc
+```
+
+* use the instructions [here](https://mattorama.github.io/vernix/git/2016/06/23/two-github-accounts.html) to configure SSH for both accounts
+* for multiple github accounts, set up a ssh config with content like this
+
+```
+Host github.com
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host mattorama.github.com
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa_mattorama
 ```
 
 ### python

@@ -2,4 +2,4 @@ channels:
   - defaults
   - conda-forge
   - anaconda
-
+  - plotly

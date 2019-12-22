@@ -1,5 +1,4 @@
 .condarc
-.gitconfig
 .psqlrc
 .sqliterc
 .tmux.conf

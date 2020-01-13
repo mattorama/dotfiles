@@ -17,13 +17,15 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # access to conda commands without ruining system python
 if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]
 then
-    source "$HOME/anaconda3/etc/profile.d/conda.sh"
+  source "$HOME/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
 else
-    export PATH="$HOME/anaconda3/bin:$PATH"
+  export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 fi
 
 # git autocomplete
@@ -40,8 +42,11 @@ alias ll='ls -al'
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 
 ## database access
-alias db1=\
+alias pg1=\
 'psql -h plastiq.periscopewarehouse.com -d site_14042 -p 5439 -U plastiq'
+alias my1=\
+'mysql -h plastiq-extractdb.caq0c0qahkl7.us-west-1.rds.amazonaws.com -P 3306 \
+-D data_load'
 
 # docker
 alias dpsa="docker ps -a"
@@ -77,3 +82,20 @@ alias lea='cd "${LEAHOME}"; subl .'
 function mkd() {
     mkdir -p "$@" && cd "$_";
 }
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/M_Percival/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/M_Percival/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/M_Percival/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/M_Percival/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

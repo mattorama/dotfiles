@@ -30,6 +30,7 @@ brew cask install dbeaver-community
 brew install git
 brew install libpq
 brew install make
+brew install mysql-client
 brew install python
 brew install sqlite3
 brew install tmux
@@ -44,13 +45,15 @@ cd $DOTHOME
 bash setup_dotfiles.sh
 ```
 
-* check lines are in to `~/.zshrc`
+* check lines are in `~/.zshrc`
 
 ```
+export PATH="/usr/local/clang6/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 ```
 
 ### git
@@ -97,6 +100,24 @@ Host mattorama.github.com
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa_mattorama
+```
+
+### psql
+
+* create `~/.pgpass` and `chmod 0600 ~/.pgpass`
+
+```
+hostname:port:database:username:password
+```
+
+### mysql-client
+
+* create `~/.my.cnf` and `chmod 0600 ~/.my.cnf`
+
+```
+[client]
+user = <username]
+password = <password>
 ```
 
 ### python
@@ -177,10 +198,13 @@ export PATH="/usr/local/clang6/bin:$PATH"
 install.packages("knitr")
 install.packages("tidyverse")
 install.packages("data.table")
-install.packages("xgboost")
-install.packages("MatchIt")
+install.packages("devtools", repos='http://cran.us.r-project.org')
+install.packages("caret")
 install.packages("forecast")
+install.packages("MatchIt")
 install.packages("plotly")
+install.packages("RPostgreSQL")
+install.packages("xgboost")
 ```
 
 ### sublime-text

@@ -4,7 +4,6 @@
 * jupyter lab for generating notebooks of plots and interactive documentation
 * vscode for more involved interactive debugging
 
-
 # requirements for text editor / IDE
 
 * autocomplete

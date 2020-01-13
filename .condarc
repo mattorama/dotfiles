@@ -3,3 +3,4 @@ channels:
   - conda-forge
   - anaconda
   - plotly
+auto_activate_base: false

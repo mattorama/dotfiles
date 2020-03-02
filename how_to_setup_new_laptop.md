@@ -120,6 +120,10 @@ user = <username]
 password = <password>
 ```
 
+### snowsql
+
+* add credentials to `~/.snowsql/config` and `chmod 0600 ~/.snowsql/config`
+
 ### python
 
 ```

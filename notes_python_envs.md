@@ -7,20 +7,19 @@
 brew install python
 ```
 
-* pip gets installed automatically as `pip3`
+* pip3 gets installed automatically
 
 ```
 /usr/local/bin/python3
-/usr/local/bin/ipython3
 ```
 
 * install some "standard" python modules for programming
 
 ```
-pip install ipdb
-pip install ipython
-pip install pylint
-pip install pytest
+pip3 install ipdb
+pip3 install ipython
+pip3 install pylint
+pip3 install pytest
 ```
 
 * create virtual environments with `venv` and manage with `pip`
